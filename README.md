@@ -1,2 +1,3 @@
 # 44xx-PPM
-Exemplo modulacao PPM com sincronismo externo
+
+Liberato - Exemplo de modulação PPM com sincronismo externo.
