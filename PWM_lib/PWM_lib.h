@@ -17,7 +17,7 @@
 #define M4F_TIMER_H_
 
 /* ****************
- * INCLUDED FILES *
+ * ARQUIVOS INCLUÍDOS *
  * ****************/
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,7 +26,7 @@
 #include "ramp_vector.h"
 
 /* *********************************
- * DEFINITION OF PUBLIC STRUCTURES *
+ * DEFINIÇÃO DE ESTRUTURAS PÚBLICAS *
  * *********************************/
 
 /**
@@ -87,7 +87,7 @@ typedef struct parametrosPulso
 } pulso_parametros_t;
 
 /* *********************************
- * PROTOTYPES OF PRIVATE FUNCTIONS *
+ * PROTÓTIPOS DE FUNÇÕES PRIVADAS *
  * *********************************/
 
 /**
