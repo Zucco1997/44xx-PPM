@@ -51,6 +51,15 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
 	}
 }
 
+/**
+ * @brief  Callback de Interrupção de Período do Timer
+ *
+ * @details Esta função é chamada quando uma interrupção de estouro de período ocorre no Timer 2.
+ *          A interrupção é gatilhada quando o valor do contador do timer atinge o valor máximo e reinicia.
+ *          A função atualiza os valores dos pulsos de subida e descida com base nos valores de Ramp_SoftStarter.
+ *
+ * @param   htim [in] : Ponteiro para a estrutura TIM_HandleTypeDef que contém a configuração do timer.
+ */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	UNUSED(htim);
