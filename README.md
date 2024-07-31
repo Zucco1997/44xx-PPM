@@ -106,12 +106,26 @@ Para configurar a função Output Compare, é necessário ajustar os registros A
 - Se CCR = 5000, a comparação ocorrerá quando o contador alcançar 5000.
 ##
 Isso pode ser usado para gerar um pulso ou alterar a saída a cada metade do período (50% do ciclo de trabalho para PWM).
+
 ##
+
 # DETECTOR DE ZERO:
 <p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/dectector_de_zero.png" alt="DETECTOR_DE_ZERO">
 </p>
+
 ##
+
+O detector de zero é responsável por nos dar uma informação quando a senóide da rede entrar
+no próximo ciclo, de negativo para positivo ou positivo para negativo. Quando sua tensão for 0v e seu
+gráfico estiver intersectando o eixo X do plano cartesiano, haverá um pulso em nível lógico 1, com
+uma tensão de pico diferente de 0, que irá para o microcontrolador, para sincronizar o nosso PPM com
+a rede através de uma ETR — sinal externo que ativará nosso periférico de temporização.
+Para a montagem do detector de zero, foram usados dois Opto-Acopladores 4N25, com leds e
+transistores internos, cada um responsável por ativar em determinado ciclo, comutando no VCC de
+3v3 e nos trazendo a informação que precisamos para a aplicação. Esse circuito também pode ser
+usado como detector de ciclo, informando em qual deles a senóide está no momento.
+
 <p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/PPM_sinal.jpg" alt="PPM_SIGNAL">
 </p>
