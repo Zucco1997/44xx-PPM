@@ -43,9 +43,9 @@
 
 /**
  * @def LARGURA_PULSO_CCR
- * @brief Define a largura do pulso CCR.
+ * @brief Define a largura do pulso CCR. 3% do valor máximo de ARR.
  */
-#define LARGURA_PULSO_CCR (uint32_t)(540U)
+#define LARGURA_PULSO_CCR (uint32_t)( (float)(3.0f / 100.0f) * (float)(Ramp_SoftStarter[0]) ) 
 
 /**
  * @brief setGet
