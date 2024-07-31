@@ -10,20 +10,60 @@
  *  @autor   Rafael V. Volkmer
  */
 
-/* DEFINES */
+/* *********************************
+ * DEFINIÇÃO DE ESTRUTURAS PÚBLICAS *
+ * *********************************/
+
+/**
+ * @def N_BORDAS
+ * @brief Define o número de bordas utilizadas no PPM.
+ */
 #define N_BORDAS 2
 
+/**
+ * @def PULSO_INICIAL_CCR
+ * @brief Define o valor inicial do pulso CCR.
+ */
 #define PULSO_INICIAL_CCR 17400
+
+/**
+ * @def LARGURA_PULSO_CCR
+ * @brief Define a largura do pulso CCR.
+ */
 #define LARGURA_PULSO_CCR 540
 
-/* VARIAVEIS */
+/**
+ * @brief Enumeração que define os tipos de borda (subida e descida).
+ */
 typedef enum {SUBIDA = 0, DESCIDA} Borda_t;
+
+/* *********************************
+ * DEFINIÇÃO DE VARIÁVEIS GLOBAIS *
+ * *********************************/
+
+/**
+ * @brief Variável estática que armazena o estado atual da borda.
+ */
 static Borda_t Borda = SUBIDA;
 
+/**
+ * @brief Variável estática que armazena o valor do novo pulso.
+ */
 static uint16_t novoPulso = PULSO_INICIAL_CCR;
-static uint16_t Pulso [N_BORDAS] = {PULSO_INICIAL_CCR, (PULSO_INICIAL_CCR + LARGURA_PULSO_CCR)};
 
+/**
+ * @brief Array estático que armazena os valores dos pulsos para as bordas de subida e descida.
+ */
+static uint16_t Pulso[N_BORDAS] = {PULSO_INICIAL_CCR, (PULSO_INICIAL_CCR + LARGURA_PULSO_CCR)};
+
+/**
+ * @brief Variável estática usada para iterar pelos valores do pulso.
+ */
 static uint16_t i;
+
+/**
+ * @brief Variável estática que armazena o valor do ângulo.
+ */
 static uint16_t angulo;
 
 /**
@@ -39,14 +79,18 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	UNUSED(htim);
 
-	if( (htim->Instance == TIM3) && (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) )
+	// Verifica se a interrupção é do Timer 3, Canal 1
+	if ((htim->Instance == TIM3) && (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1))
 	{
+		// Alterna a borda (de subida para descida ou vice-versa)
 		Borda = (Borda == DESCIDA) ? SUBIDA : DESCIDA;
 
+		// Atualiza o valor de comparação do Timer 3, Canal 1
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, (Pulso[Borda]));
 	}
 	else
 	{
+		// No Operation (nenhuma operação é realizada)
 		__NOP();
 	}
 }
@@ -64,13 +108,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	UNUSED(htim);
 
-	if(htim->Instance == TIM2)
+	// Verifica se a interrupção é do Timer 2
+	if (htim->Instance == TIM2)
 	{
+		// Atualiza os valores dos pulsos de subida e descida
 		Pulso[SUBIDA] = Ramp_SoftStarter[i];
 		Pulso[DESCIDA] = (Pulso[SUBIDA] + LARGURA_PULSO_CCR);
-    	}
-    	else
+	}
+	else
 	{
+		// No Operation (nenhuma operação é realizada)
 		__NOP();
 	}
 }
