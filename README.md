@@ -28,7 +28,7 @@ A Modulação por Posição de Pulso (PPM) é uma técnica de modulação de sin
 ### Aplicação da PPM
 A PPM é amplamente utilizada em sistemas de comunicação sem fio, sistemas de controle remoto, e em aplicações industriais para controle de potência. Uma das aplicações práticas e relevantes é no controle de SCRs (Silicon Controlled Rectifiers) para ajustar a tensão média aplicada a uma carga.
 ###
-## Controle de  ngulo de Disparo de SCR usando PPM
+## Controle de angulo de Disparo de SCR usando PPM
 ###
 ### O que é um SCR?
 - Um SCR (Silicon Controlled Rectifier) é um dispositivo semicondutor que atua como um interruptor controlado. Ele permite o fluxo de corrente elétrica quando uma tensão de disparo é aplicada ao seu terminal de gate. Uma vez disparado, ele continua a conduzir até que a corrente através dele caia abaixo de um certo valor mínimo (corrente de manutenção).
