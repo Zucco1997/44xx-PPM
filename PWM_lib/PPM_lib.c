@@ -49,7 +49,7 @@ void* PARAM_setAndGet(parametro_t param, operacao_t op, void* value)
     return saida;
 }
 
-borda_t PARAM_get_borda()
+inline borda_t PARAM_get_borda()
 {
     borda_t saida = 0;
   
@@ -58,12 +58,12 @@ borda_t PARAM_get_borda()
     return saida;
 }
 
-void PARAM_set_borda(borda_t value)
+inline void PARAM_set_borda(borda_t value)
 {
     PARAM_setAndGet(BORDA, SET, &value);
 }
 
-uint32_t PARAM_get_pulso(int index)
+inline uint32_t PARAM_get_pulso(int index)
 {
     uint32_t saida = 0;
   
@@ -75,7 +75,7 @@ uint32_t PARAM_get_pulso(int index)
     return saida;
 }
 
-void PARAM_set_pulso(int index, uint32_t value)
+inline void PARAM_set_pulso(int index, uint32_t value)
 {
     if (index >= 0 && index < N_BORDAS) 
     {
@@ -83,7 +83,7 @@ void PARAM_set_pulso(int index, uint32_t value)
     }
 }
 
-uint16_t PARAM_get_angulo_iterador()
+inline uint16_t PARAM_get_angulo_iterador()
 {
     uint16_t saida = 0;
   
@@ -92,16 +92,7 @@ uint16_t PARAM_get_angulo_iterador()
     return saida;
 }
 
-void PARAM_set_angulo_iterador(uint16_t value)
+inline void PARAM_set_angulo_iterador(uint16_t value)
 {
     PARAM_setAndGet(ANGULO_ITERADOR, SET, &value);
-}
-
-void add_pulso(int index)
-{
-    uint32_t pulso;
-
-    pulso = PARAM_get_pulso(index);
-  
-    PARAM_set_pulso(index, pulso + 1);
 }
