@@ -14,7 +14,12 @@
 ├── .gitignore
 └── README.md
 ```
-
+- No projeto, há a pasta das libs, que, na .h, há as definições de tipos, defines structs. Essa, deve ser incluida na pasta inc. A .c, que deve ser incluida na src, tem encapsulamento set get para a estrutura de variáveis do PPM, que permite a manipulação dos endereços sem o uso de variáveis globais. A implementação das funções de interrupção com essas libs está em PWM_irqFunctions_ponteiros.c
+  
+- Caso queira uma abordagem mais simples, PWM_irqFunctions_varglobal.c tem as mesma aplicações, mas usando só variáveis globais para se comunicar com as funções de interrupção.
+  
+- create_ramp.cpp é utilizado para criar um arquivo .h com os valores para a rampa do ppm, variando de valores de arr de 1 a 180, representando os graus. É só inserir o ARR escolhido e rodar o scrpt, então, o arquivo ramp_vector.h será criado automaticamente. A partir daí, é só jogar pra pasta inc e dar include no código que desejar usar (por padrão, ele já está incluso na PPM_lib.h).
+  
 # PPM - Pulse Position Modulation:
 A Modulação por Posição de Pulso (PPM) é uma técnica de modulação de sinal onde a posição dos pulsos em uma sequência é variada de acordo com a amplitude do sinal de modulação. Em outras palavras, em vez de alterar a largura ou a amplitude dos pulsos, como em outras técnicas de modulação, a PPM ajusta o tempo de ocorrência de cada pulso. Este método é utilizado em diversas aplicações de comunicação e controle, proporcionando uma maneira eficiente de transmitir informações de forma robusta contra interferências e ruídos.
 ###
