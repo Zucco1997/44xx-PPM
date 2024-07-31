@@ -49,7 +49,6 @@ void* PARAM_setAndGet(parametro_t param, operacao_t op, void* value)
     return saida;
 }
 
-// Funções get e set usando PARAM_setAndGet
 borda_t PARAM_get_borda()
 {
     borda_t saida = 0;
