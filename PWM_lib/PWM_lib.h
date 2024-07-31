@@ -1,5 +1,6 @@
 /**
- *  @ingroup PPM_aplication
+*   @addtogroup PPM_source
+ *  @{
  *  @addtogroup PPM_source PPM
  *  @{
  *
@@ -7,15 +8,26 @@
  *  @brief   Este módulo fornece funções para manipular parâmetros PPM como `borda`, `pulso` e `angulo_iterador`.
  *           Inclui funções para definir e obter esses parâmetros, encapsulando o acesso a uma instância estática de `pulso_parametros_t`.
  *
- *  @file    PPM_lib.c
- *  @autor   Rafael V. Volkmer
+ *  @brief        PWM_module
+ *  @headerfile   PWM_lib.h
+ *  @autor        Rafael V. Volkmer
  */
 
+#ifndef M4F_TIMER_H_
+#define M4F_TIMER_H_
+
+/* ****************
+ * INCLUDED FILES *
+ * ****************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 
 #include "ramp_vector.h"
+
+/* *********************************
+ * DEFINITION OF PUBLIC STRUCTURES *
+ * *********************************/
 
 /**
  * @def N_BORDAS
@@ -34,48 +46,6 @@
  * @brief Define a largura do pulso CCR.
  */
 #define LARGURA_PULSO_CCR (uint32_t)(540U)
-
-/**
- * @brief bordasPPM
- * @brief Enumeração que define os tipos de bordas no PPM.
- * 
- * @typedef borda_t
- */
-typedef enum bordasPPM
-{ 
-  SUBIDA              = (uint8_t)(0u), /**< Borda de subida */
-  DESCIDA             = (uint8_t)(1u)  /**< Borda de descida */
-} borda_t;
-
-/**
- *  @addtogroup M4F_application
- *  @{
- *  @addtogroup M4F_Timer Timer
- *  @{
- * 
- *  @title{Module: Timer}
- *  @brief This module provides functionalities for managing timers, including configuration, 
- *  starting, stopping, and handling interrupts. It abstracts the hardware details 
- *  and provides a high-level API for timer operations.
- *
- *  @brief          Timer Module
- *  @headerfile     M4F_timer.h
- *  @author         Rafael V. Volkmer
- */
-
-#ifndef PWM_LIB_H_
-#define PWM_LIB_H_
-
-/* ****************
- * INCLUDED FILES *
- * ****************/
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-/* *********************************
- * DEFINITION OF PUBLIC STRUCTURES *
- * *********************************/
 
 /**
  * @brief setGet
