@@ -54,11 +54,15 @@ Os timers do STM32F441 oferecem várias funcionalidades avançadas, incluindo a 
 O timer conta de 0 até o valor de ARR, momento em que ele gera um evento de atualização e reinicia a contagem.
 O valor de ARR determina a frequência do timer e a resolução do PWM.
 
+##
+
 ### CCR (Capture/Compare Register):
 
 - O CCR é usado para armazenar o valor de comparação ou captura.
 No modo Output Compare, o valor do CCR é comparado com o valor do contador.
 Quando o valor do contador iguala o valor do CCR, uma ação definida é realizada (por exemplo, a saída do canal é alterada).
+
+##
 
 ### PSC (Prescaler)
 
@@ -66,6 +70,8 @@ Quando o valor do contador iguala o valor do CCR, uma ação definida é realiza
 O valor do PSC define o fator de divisão do clock. Por exemplo, um valor de PSC de 7 dividirá a frequência do clock por 8.
 Isso permite ajustar a frequência do timer de acordo com a aplicação.
 Frequência de Clock:
+
+##
 
 ### Frequência de Clock
 
@@ -83,20 +89,19 @@ Para configurar a função Output Compare, é necessário ajustar os registros A
 ##
 - Capture/Compare Register (CCR): 5000
 ##
-## Passos:
-
+# Passos:
 ### Configuração do PSC:
 - Se PSC = 179, o clock do timer será dividido por 180.
 ###
 - Frequência do timer = 180 MHz / (PSC + 1) = 1 MHz.
-  
+##
 ### Configuração do ARR:
 - Se ARR = 9999, o timer contará de 0 até 9999 antes de reiniciar.
 ###
 - Período do timer = ARR + 1 = 10000 ciclos.
 ###
 - Frequência do timer = 1 MHz / 10000 = 100 Hz.
-  
+##
 ### Configuração do CCR:
 - Se CCR = 5000, a comparação ocorrerá quando o contador alcançar 5000.
 ##
