@@ -1,3 +1,19 @@
+# ESTRUTURA DO REPOSITÓRIO:
+
+```
+44xx-PPM
+├── PPM_lib
+│   ├── PPM_lib.h
+│   ├── PPM_lib.c
+│   └── ramp_vector.h
+├── PWM_irqFunctions_ponteiros.c
+├── PWM_irqFunctions_varglobal.c
+├── create_ramp.cpp
+├── LICENSE.txt
+├── .gitignore
+├── README.md
+```
+
 # PPM - Pulse Position Modulation:
 A Modulação por Posição de Pulso (PPM) é uma técnica de modulação de sinal onde a posição dos pulsos em uma sequência é variada de acordo com a amplitude do sinal de modulação. Em outras palavras, em vez de alterar a largura ou a amplitude dos pulsos, como em outras técnicas de modulação, a PPM ajusta o tempo de ocorrência de cada pulso. Este método é utilizado em diversas aplicações de comunicação e controle, proporcionando uma maneira eficiente de transmitir informações de forma robusta contra interferências e ruídos.
 ###
