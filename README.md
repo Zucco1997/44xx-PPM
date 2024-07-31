@@ -207,6 +207,10 @@ tensão na carga conforme a varredura do vetor, continuou de forma eficaz.
 
 ## Para o cálculo de ARR do TIM 2:
 
+<p align="center">
+  <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/CALCULOS_TIM2.png" alt="PPM_SIGNAL">
+</p>
+
 ##
 
 # IMPORTANTE (CÓDIGO):
