@@ -47,11 +47,6 @@ typedef enum {SUBIDA = 0, DESCIDA} Borda_t;
 static Borda_t Borda = SUBIDA;
 
 /**
- * @brief Variável estática que armazena o valor do novo pulso.
- */
-static uint16_t novoPulso = PULSO_INICIAL_CCR;
-
-/**
  * @brief Array estático que armazena os valores dos pulsos para as bordas de subida e descida.
  */
 static uint16_t Pulso[N_BORDAS] = {PULSO_INICIAL_CCR, (PULSO_INICIAL_CCR + LARGURA_PULSO_CCR)};
