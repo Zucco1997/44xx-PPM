@@ -4,12 +4,12 @@ A Modulação por Posição de Pulso (PPM) é uma técnica de modulação de sin
 ### Aplicação da PPM
 A PPM é amplamente utilizada em sistemas de comunicação sem fio, sistemas de controle remoto, e em aplicações industriais para controle de potência. Uma das aplicações práticas e relevantes é no controle de SCRs (Silicon Controlled Rectifiers) para ajustar a tensão média aplicada a uma carga.
 ###
-## Controle de Ângulo de Disparo de SCR usando PPM
+## Controle de  ngulo de Disparo de SCR usando PPM
 ###
 ### O que é um SCR?
 - Um SCR (Silicon Controlled Rectifier) é um dispositivo semicondutor que atua como um interruptor controlado. Ele permite o fluxo de corrente elétrica quando uma tensão de disparo é aplicada ao seu terminal de gate. Uma vez disparado, ele continua a conduzir até que a corrente através dele caia abaixo de um certo valor mínimo (corrente de manutenção).
 ###
-### Alteração do Ângulo de Disparo
+### Alteração do  ngulo de Disparo
 - O ângulo de disparo de um SCR é o ponto no ciclo de uma forma de onda AC em que o SCR é ativado. Alterando o ângulo de disparo, é possível controlar a quantidade de tempo que o SCR permanece conduzindo durante cada ciclo da onda AC. Isso, por sua vez, controla a quantidade de potência entregue à carga.
 ###
 ### Controle de Tensão Média
@@ -117,7 +117,7 @@ Isso pode ser usado para gerar um pulso ou alterar a saída a cada metade do per
 
 ##
 
-- O detector de zero é responsável por nos dar uma informação quando a senóide da rede entrar
+O detector de zero é responsável por nos dar uma informação quando a senóide da rede entrar
 no próximo ciclo, de negativo para positivo ou positivo para negativo. Quando sua tensão for 0v e seu
 gráfico estiver intersectando o eixo X do plano cartesiano, haverá um pulso em nível lógico 1, com
 uma tensão de pico diferente de 0, que irá para o microcontrolador, para sincronizar o nosso PPM com
@@ -177,3 +177,5 @@ configurado por nós, de 84 MHz, e aguenta, em suas entradas, até 5V(DC), sendo
 
 
 ###
+
+
