@@ -35,3 +35,17 @@ typedef struct parametrosPulso
   uint32_t  pulso[N_BORDAS];
   uint16_t  angulo_iterador;
 } pulso_parametros_t;
+
+void* PARAM_setAndGet(parametro_t param, operacao_t op, void* value);
+
+inline borda_t PARAM_get_borda();
+
+inline void PARAM_set_borda(borda_t value);
+
+inline uint32_t PARAM_get_pulso(int index);
+
+inline void PARAM_set_pulso(int index, uint32_t value);
+
+inline uint16_t PARAM_get_angulo_iterador();
+
+inline void PARAM_set_angulo_iterador(uint16_t value);
