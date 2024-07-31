@@ -15,10 +15,13 @@
  * ARQUIVOS INCLUÍDOS *
  * ****************/
 
-/* implementações: */
+/* Dependencias: */
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+
+/* implementações: */
+#include "PPM_lib.h"
 
 /* *********************************
  * DEFINIÇÃO DE FUNÇÕES PRIVADAS *
