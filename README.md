@@ -184,6 +184,7 @@ subir novamente em 16.700 e descer em 16.300, variando, com suas bordas bem defi
 algoritmo do nosso PPM, como mostrado na imagem abaixo:
 
 # SINAL SIMULADO COM EVENTOS DO TIMER:
+
 <p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/PPM_sinal.jpg" alt="PPM_SIGNAL">
 </p>
@@ -191,6 +192,10 @@ algoritmo do nosso PPM, como mostrado na imagem abaixo:
 ##
 
 ## Para os cálculos do TIM 3:
+
+<p align="center">
+  <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/CALCULOS_TIM3.png" alt="PPM_SIGNAL">
+</p>
 
 ##
 
