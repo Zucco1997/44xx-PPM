@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#include "softstarter_rampa.h"
+#include "ramp_vector.h"
 
-#define N_BORDAS 2
+#define N_BORDAS 0
 
-#define PULSO_INICIAL_CCR (uint32_t)(17400U)
+#define PULSO_INICIAL_CCR (uint32_t)(Ramp_SoftStarter[0])
 #define LARGURA_PULSO_CCR (uint32_t)(540U)
 
 typedef enum bordasPPM
