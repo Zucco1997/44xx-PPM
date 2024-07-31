@@ -209,4 +209,39 @@ tensão na carga conforme a varredura do vetor, continuou de forma eficaz.
 
 ##
 
+# IMPORTANTE (CÓDIGO):
+
+```c
+htim3.Instance->CCMR1 |= TIM_CCMR1_OC1CE;  // DÁ CLEAR NO OC DE FORMA A NÃO ATRAPALHAR OS PULSOS
+```
+O código htim3.Instance->CCMR1 |= TIM_CCMR1_OC1CE é uma instrução em C para manipular um registrador de um timer em um microcontrolador STM32. Vamos detalhar o que cada parte desse código faz:
+
+Contexto
+No contexto de microcontroladores STM32, htim3 é uma instância de um manipulador de timer (TIM_HandleTypeDef), e Instance é um ponteiro para a estrutura de registros do hardware do timer específico (neste caso, o Timer 3). Os registros do timer controlam várias configurações e estados do timer.
+
+## Estrutura do Código
+
+### htim3.Instance:
+
+htim3 é uma variável do tipo TIM_HandleTypeDef, que é uma estrutura definida pela biblioteca HAL (Hardware Abstraction Layer) da STMicroelectronics.
+Instance é um membro dessa estrutura que aponta para a base dos registros do periférico Timer 3. Essa base é do tipo TIM_TypeDef, que é uma estrutura que mapeia todos os registros do timer.
+
+### ->CCMR1:
+
+CCMR1 é o "Capture/Compare Mode Register 1" do timer. Este registro controla os modos de captura/comparação para os canais 1 e 2 do timer.
+|= TIM_CCMR1_OC1CE:
+
+### TIM_CCMR1_OC1CE 
+é uma constante definida na biblioteca HAL que representa o bit "Output Compare 1 Clear Enable". Configurar esse bit ativa a funcionalidade de limpeza automática do canal de saída 1.
+
+## Propósito
+
+O propósito dessa linha de código é configurar o Timer 3 para que a função de limpeza automática seja ativada no canal 1 de comparação de saída. Isso pode ser usado em aplicações onde você precisa que a saída de comparação de um canal seja automaticamente redefinida sob certas condições, sem necessidade de intervenção adicional do software.
+
+### Explicação Detalhada do Registrador
+
+- CCMR1 (Capture/Compare Mode Register 1): Controla os modos de captura/comparação para os canais 1 e 2 do timer.
+  
+- TIM_CCMR1_OC1CE (Output Compare 1 Clear Enable): Quando este bit está definido, ele ativa a função de limpeza automática da saída do canal 
+
 ###
