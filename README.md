@@ -35,6 +35,9 @@ A PPM é amplamente utilizada em sistemas de comunicação sem fio, sistemas de 
 - Eficiência: Controlando a tensão média diretamente, a PPM pode ser utilizada em sistemas de controle de potência com alta eficiência.
 - Imunidade a Ruído: A modulação por posição de pulso é menos suscetível a interferências de ruído, tornando-a uma escolha robusta para aplicações industriais.
 ###
+
+# ALGORITIMO DO PPM
+
 <p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/PPM_sinal.jpg" alt="PPM_SIGNAL">
 </p>
