@@ -1,7 +1,35 @@
-#include <stdio.h>
+/**
+ *  @ingroup PPM_aplication
+ *  @addtogroup PPM_source PPM
+ *  @{
+ *
+ *  @title{Módulo: PPM}
+ *  @brief   Este módulo fornece funções para manipular parâmetros PPM como `borda`, `pulso` e `angulo_iterador`.
+ *           Inclui funções para definir e obter esses parâmetros, encapsulando o acesso a uma instância estática de `pulso_parametros_t`.
+ *
+ *  @file    PPM_lib.c
+ *  @autor   Rafael V. Volkmer
+ */
+
+/* ****************
+ * ARQUIVOS INCLUÍDOS *
+ * ****************/
+
+/* implementações: */
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdint.h>
 
+/* *********************************
+ * DEFINIÇÃO DE FUNÇÕES PRIVADAS *
+ * *********************************/
+
+/**
+ * @title{PPM - PARAM_setAndGet}
+ *
+ * TODO: Nada até agora. A função funciona perfeitamente (adicione aqui uma possível solução se ocorrer um bug).
+ *  
+ **/
 void* PARAM_setAndGet(parametro_t param, operacao_t op, void* value)
 {
     void* saida = NULL;
@@ -49,6 +77,12 @@ void* PARAM_setAndGet(parametro_t param, operacao_t op, void* value)
     return saida;
 }
 
+/**
+ * @title{PPM - PARAM_get_borda}
+ *
+ * TODO: Nada até agora. A função funciona perfeitamente (adicione aqui uma possível solução se ocorrer um bug).
+ *  
+ **/
 inline borda_t PARAM_get_borda()
 {
     borda_t saida = 0;
@@ -58,11 +92,23 @@ inline borda_t PARAM_get_borda()
     return saida;
 }
 
+/**
+ * @title{PPM - PARAM_set_borda}
+ *
+ * TODO: Nada até agora. A função funciona perfeitamente (adicione aqui uma possível solução se ocorrer um bug).
+ *  
+ **/
 inline void PARAM_set_borda(borda_t value)
 {
     PARAM_setAndGet(BORDA, SET, &value);
 }
 
+/**
+ * @title{PPM - PARAM_get_pulso}
+ *
+ * TODO: Nada até agora. A função funciona perfeitamente (adicione aqui uma possível solução se ocorrer um bug).
+ *  
+ **/
 inline uint32_t PARAM_get_pulso(int index)
 {
     uint32_t saida = 0;
@@ -75,6 +121,12 @@ inline uint32_t PARAM_get_pulso(int index)
     return saida;
 }
 
+/**
+ * @title{PPM - PARAM_set_pulsos}
+ *
+ * TODO: Nada até agora. A função funciona perfeitamente (adicione aqui uma possível solução se ocorrer um bug).
+ *  
+ **/
 inline void PARAM_set_pulso(int index, uint32_t value)
 {
     if (index >= 0 && index < N_BORDAS) 
@@ -83,6 +135,12 @@ inline void PARAM_set_pulso(int index, uint32_t value)
     }
 }
 
+/**
+ * @title{PPM - PARAM_get_angulo_iterador}
+ *
+ * TODO: Nada até agora. A função funciona perfeitamente (adicione aqui uma possível solução se ocorrer um bug).
+ *  
+ **/
 inline uint16_t PARAM_get_angulo_iterador()
 {
     uint16_t saida = 0;
@@ -92,7 +150,15 @@ inline uint16_t PARAM_get_angulo_iterador()
     return saida;
 }
 
+/**
+ * @title{PPM - PARAM_set_angulo_iterador}
+ *
+ * TODO: Nada até agora. A função funciona perfeitamente (adicione aqui uma possível solução se ocorrer um bug).
+ *  
+ **/
 inline void PARAM_set_angulo_iterador(uint16_t value)
 {
     PARAM_setAndGet(ANGULO_ITERADOR, SET, &value);
 }
+
+/*** end of file ***/
