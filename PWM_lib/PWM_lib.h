@@ -1,3 +1,16 @@
+/**
+ *  @ingroup PPM_aplication
+ *  @addtogroup PPM_source PPM
+ *  @{
+ *
+ *  @title{Módulo: PPM}
+ *  @brief   Este módulo fornece funções para manipular parâmetros PPM como `borda`, `pulso` e `angulo_iterador`.
+ *           Inclui funções para definir e obter esses parâmetros, encapsulando o acesso a uma instância estática de `pulso_parametros_t`.
+ *
+ *  @file    PPM_lib.c
+ *  @autor   Rafael V. Volkmer
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -107,16 +120,80 @@ typedef struct parametrosPulso
  * PROTOTYPES OF PRIVATE FUNCTIONS *
  * *********************************/
 
+/**
+ * @title{PPM - PARAM_setAndGet}
+ *
+ * @brief   Esta função define ou obtém um valor de parâmetro na estrutura estática `pulso_parametros_t`.
+ *          A função encapsula o acesso a esta estrutura, garantindo operações seguras.
+ *
+ * @param   param [in] : Enumeração que especifica o parâmetro a ser acessado ou modificado.
+ * @param   op    [in] : Operação a ser realizada (GET ou SET).
+ * @param   value [in] : Ponteiro para o valor a ser definido (usado apenas se a operação for SET).
+ *
+ * @return  Ponteiro para o valor do parâmetro:
+ *              - Não NULL : Ponteiro válido para o valor do parâmetro.
+ *              - NULL     : Operação ou parâmetro inválido especificado.
+ */
 void* PARAM_setAndGet(parametro_t param, operacao_t op, void* value);
 
+/**
+ * @title{PPM - PARAM_get_borda}
+ *
+ * @brief   Esta função retorna o valor de `borda` da estrutura estática `pulso_parametros_t`.
+ *
+ * @return  O valor de `borda`.
+ */
 inline borda_t PARAM_get_borda();
 
+/**
+ * @title{PPM - PARAM_set_borda}
+ *
+ * @brief   Esta função define o valor de `borda` na estrutura estática `pulso_parametros_t`.
+ *
+ * @param   value [in] : O valor de `borda` a ser definido.
+ */
 inline void PARAM_set_borda(borda_t value);
 
+/**
+ * @title{PPM - PARAM_get_pulso}
+ *
+ * @brief   Esta função retorna o valor de `pulso` para o índice especificado da estrutura estática `pulso_parametros_t`.
+ *
+ * @param   index [in] : O índice do array `pulso`.
+ *
+ * @return  O valor de `pulso`.
+ */
 inline uint32_t PARAM_get_pulso(int index);
 
+/**
+ * @title{PPM - PARAM_set_pulso}
+ *
+ * @brief   Esta função define o valor de `pulso` para o índice especificado na estrutura estática `pulso_parametros_t`.
+ *
+ * @param   index [in] : O índice do array `pulso`.
+ * @param   value [in] : O valor de `pulso` a ser definido.
+ */
 inline void PARAM_set_pulso(int index, uint32_t value);
 
+/**
+ * @title{PPM - PARAM_get_angulo_iterador}
+ *
+ * @brief   Esta função retorna o valor de `angulo_iterador` da estrutura estática `pulso_parametros_t`.
+ *
+ * @return  O valor de `angulo_iterador`.
+ */
 inline uint16_t PARAM_get_angulo_iterador();
 
+/**
+ * @title{PPM - PARAM_set_angulo_iterador}
+ *
+ * @brief   Esta função define o valor de `angulo_iterador` na estrutura estática `pulso_parametros_t`.
+ *
+ * @param   value [in] : O valor de `angulo_iterador` a ser definido.
+ */
 inline void PARAM_set_angulo_iterador(uint16_t value);
+
+
+#endif /* #ifndef M4F_TIMER_H_ */
+/**@}*/
+/**@}*/
