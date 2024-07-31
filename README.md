@@ -109,12 +109,14 @@ Isso pode ser usado para gerar um pulso ou alterar a saída a cada metade do per
 ##
 # DETECTOR DE ZERO:
 <p align="center">
+  <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/dectector_de_zero.png" alt="DETECTOR_DE_ZERO">
+</p>
+##
+<p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/PPM_sinal.jpg" alt="PPM_SIGNAL">
 </p>
 
-<p align="center">
-  <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/dectector_de_zero.png" alt="DETECTOR_DE_ZERO">
-</p>
+
 <p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/frequencia_do_pulso.png" alt="FREQUENCIA_DO_PULSO">
 </p>
