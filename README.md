@@ -171,11 +171,42 @@ configurado por nós, de 84 MHz, e aguenta, em suas entradas, até 5V(DC), sendo
 
 # COMO FAZER O PULSO COM STM32
 
+Com o microcontrolador STM32F446RE, usamos um canal de um timer, no modo output
+compare (OC) para fazer nosso PPM. Definimos sua frequência para 120hz, com um período de
+8,3ms, que é metade do período total de uma senóide, de 16,6 ms e 60hz, pois cada sinal atuará em um
+ciclo. O timer utilizado foi o TIM3, que tem um trigger externo em seu ETR1, no PD2, que é ativado
+pela detecção de zero e está no modo one-pulse. Resumidamente, o sinal do detector irá ativar a
+contagem do timer, que irá estourar após 8,3ms, e parará de contar, sendo reativado pelo próximo
+pulso. Durante esse período até o timer estourar e iniciar uma nova contagem, variamos o valor de seu
+CCR até o máximo valor de ARR, que, no caso, é 18k. Assim, podemos dizer que, por exemplo, ele
+sobe a primeira vez em 17.500 e desce em 17.400, formando a primeira posição. Depois, ele pode
+subir novamente em 16.700 e descer em 16.300, variando, com suas bordas bem definidas. Esse é o
+algoritmo do nosso PPM, como mostrado na imagem abaixo:
+
+# SINAL SIMULADO COM EVENTOS DO TIMER:
 <p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/PPM_sinal.jpg" alt="PPM_SIGNAL">
 </p>
 
+##
+
+## Para os cálculos do TIM 3:
+
+##
+
+Para a estruturação do código, decidimos usar um vetor de 180 posições, que contém as bordas
+de subida do nosso CCR. A borda de descida será sempre BORDA DE SUBIDA + LARGURA DO
+PULSO e, assim, atualizaremos esses 2 valores a cada estouro de um outro timer, o TIM2, que irá
+variar sua frequência de acordo com o tempo de rampa que escolhermos na parte de especificações,
+através da alteração do ARR através de um cálculo, por regra de três, que a própria MCU irá realizar.
+Devido às quedas de tensão dos SCRs, os pulsos em 171 - 180 iam para a meia onda da
+próxima senóide, por tanto, tivemos que diminuir o número de elementos para 170. Isso não alterou a
+tensão na carga conforme a varredura do vetor, continuou de forma eficaz.
+
+##
+
+## Para o cálculo de ARR do TIM 2:
+
+##
 
 ###
-
-
