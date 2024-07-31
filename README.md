@@ -101,6 +101,8 @@ largura do pulso com os cursores do osciloscópio. Como visto na imagem abaixo:
 
 ![Equação](https://latex.codecogs.com/png.image?\dpi{110}\bg{black}F=\frac{1}{T}\Rightarrow\frac{1}{200us}\Rightarrow&space;5000hz\Rightarrow&space;5Khz) 
 
+##
+
 - Além disso, temos a medição de sua tensão de pico em nível alto, também realizada no
 osciloscópio, que está em volta de, aproximadamente, 3,20V(DC). O STM32F446RE, que é o
 microcontrolador usado no projeto, opera em uma frequência de 180 MHz, com um clock interno,
