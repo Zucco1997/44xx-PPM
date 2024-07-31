@@ -117,7 +117,7 @@ Isso pode ser usado para gerar um pulso ou alterar a saída a cada metade do per
 
 ##
 
-O detector de zero é responsável por nos dar uma informação quando a senóide da rede entrar
+- O detector de zero é responsável por nos dar uma informação quando a senóide da rede entrar
 no próximo ciclo, de negativo para positivo ou positivo para negativo. Quando sua tensão for 0v e seu
 gráfico estiver intersectando o eixo X do plano cartesiano, haverá um pulso em nível lógico 1, com
 uma tensão de pico diferente de 0, que irá para o microcontrolador, para sincronizar o nosso PPM com
@@ -134,18 +134,46 @@ usado como detector de ciclo, informando em qual deles a senóide está no momen
 ![Equação](https://latex.codecogs.com/png.image?\dpi{110}\bg{black}R2=\frac{Vcc}{10*10{^{-3}}}\Rightarrow\frac{3.3v}{10*10{^{-3}}}=300K\Omega&space;) 
 
 ##
+- O pulso do detector de zero tem tamanho de 200 us, dado obtido por nós ao medirmos a
+largura do pulso com os cursores do osciloscópio. Como visto na imagem abaixo:
+
+##
+
+<p align="center">
+  <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/frequencia_do_pulso.png" alt="FREQUENCIA_DO_PULSO">
+</p>
+
+##
+
+## Dimensionamento:
+
+![Equação](https://latex.codecogs.com/png.image?\dpi{110}\bg{black}F=\frac{1}{T}\Rightarrow\frac{1}{200us}\Rightarrow&space;5000hz\Rightarrow&space;5Khz) 
+
+- Além disso, temos a medição de sua tensão de pico em nível alto, também realizada no
+osciloscópio, que está em volta de, aproximadamente, 3,20V(DC). O STM32F446RE, que é o
+microcontrolador usado no projeto, opera em uma frequência de 180 MHz, com um clock interno,
+configurado por nós, de 84 MHz, e aguenta, em suas entradas, até 5V(DC), sendo o uso típico em
+3v3(DC), por t#nto, esse pulso é capaz de ser lido de forma eficaz pelo microcontrolador
+
+##
+
+# SINAL FINAL NO OSCILOSCÓPIO (DETECTOR DE ZERO)
+
+<p align="center">
+  <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/Sinal%20no%20osciloscópio.png" alt="SINAL_OSCILOSCOPIO">
+</p>
+
+##
+
+- Como podemos ver, o sinal faz a intersecção direitinho com o zero da senoide que pegamos da rede, passando pelo transformador monofasico 12v.
+  
+##
+
+# COMO FAZER O PULSO COM STM32
 
 <p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/PPM_sinal.jpg" alt="PPM_SIGNAL">
 </p>
 
 
-<p align="center">
-  <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/frequencia_do_pulso.png" alt="FREQUENCIA_DO_PULSO">
-</p>
-<p align="center">
-  <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/Sinal%20no%20osciloscópio.png" alt="SINAL_OSCILOSCOPIO">
-</p>
-
-
-  ###
+###
