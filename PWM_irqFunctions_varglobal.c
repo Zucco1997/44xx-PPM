@@ -1,3 +1,14 @@
+/**
+ *  @brief   Este módulo fornece um exemplo de implementação das funções de callback que regem o PPM (Pulse Position Modulation).
+ *           As funções de callback são configuradas para responder a interrupções de comparação de saída e de estouro de período
+ *           dos timers configurados no Cube IDE.
+ *           Este exemplo mostra como incluir e tratar essas funções no ambiente do Cube IDE, garantindo a manipulação adequada
+ *           dos parâmetros PPM, como `borda`, `pulso` e `angulo_iterador`.
+ *           Para que este exemplo funcione corretamente, é essencial que o IOC seja configurado adequadamente e que os
+ *           registradores necessários sejam inicializados na função `main`.
+ *
+ *  @autor   Rafael V. Volkmer
+ */
 
 /* DEFINES */
 #define N_BORDAS 2
@@ -15,7 +26,15 @@ static uint16_t Pulso [N_BORDAS] = {PULSO_INICIAL_CCR, (PULSO_INICIAL_CCR + LARG
 static uint16_t i;
 static uint16_t angulo;
 
-/* FUNÇÕES IRQ */
+/**
+ * @brief  Callback de Interrupção de Comparação de Saída do Timer
+ *
+ * @details Esta função é chamada quando uma interrupção de comparação de saída ocorre no Timer 3, Canal 1.
+ *          A interrupção é gatilhada quando o valor do contador do timer atinge o valor do registro de comparação.
+ *          A função alterna a borda (de subida para descida ou vice-versa) e atualiza o valor de comparação para a próxima borda.
+ *
+ * @param   htim [in] : Ponteiro para a estrutura TIM_HandleTypeDef que contém a configuração do timer.
+ */
 void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	UNUSED(htim);
