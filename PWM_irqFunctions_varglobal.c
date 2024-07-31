@@ -40,8 +40,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	{
 		Pulso[SUBIDA] = Ramp_SoftStarter[i];
 		Pulso[DESCIDA] = (Pulso[SUBIDA] + LARGURA_PULSO_CCR);
-    }
-    else
+    	}
+    	else
 	{
 		__NOP();
 	}
