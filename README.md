@@ -33,7 +33,7 @@ A PPM é amplamente utilizada em sistemas de comunicação sem fio, sistemas de 
 ### O que é um SCR?
 - Um SCR (Silicon Controlled Rectifier) é um dispositivo semicondutor que atua como um interruptor controlado. Ele permite o fluxo de corrente elétrica quando uma tensão de disparo é aplicada ao seu terminal de gate. Uma vez disparado, ele continua a conduzir até que a corrente através dele caia abaixo de um certo valor mínimo (corrente de manutenção).
 ###
-### Alteração do  ngulo de Disparo
+### Alteração do angulo de Disparo
 - O ângulo de disparo de um SCR é o ponto no ciclo de uma forma de onda AC em que o SCR é ativado. Alterando o ângulo de disparo, é possível controlar a quantidade de tempo que o SCR permanece conduzindo durante cada ciclo da onda AC. Isso, por sua vez, controla a quantidade de potência entregue à carga.
 ###
 ### Controle de Tensão Média
