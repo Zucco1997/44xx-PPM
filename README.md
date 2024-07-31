@@ -110,6 +110,7 @@ Isso pode ser usado para gerar um pulso ou alterar a saída a cada metade do per
 ##
 
 # DETECTOR DE ZERO:
+
 <p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/dectector_de_zero.png" alt="DETECTOR_DE_ZERO">
 </p>
@@ -125,6 +126,14 @@ Para a montagem do detector de zero, foram usados dois Opto-Acopladores 4N25, co
 transistores internos, cada um responsável por ativar em determinado ciclo, comutando no VCC de
 3v3 e nos trazendo a informação que precisamos para a aplicação. Esse circuito também pode ser
 usado como detector de ciclo, informando em qual deles a senóide está no momento.
+
+## Dimensionamento:
+
+![Equação](https://latex.codecogs.com/png.image?\dpi{110}\bg{black}&space;R1=\frac{12-Vled}{10*10{^{-3}}}\Rightarrow\frac{12-1.6v}{10*10{^{-3}}}=1K\Omega&space;) 
+
+![Equação](https://latex.codecogs.com/png.image?\dpi{110}\bg{black}R2=\frac{Vcc}{10*10{^{-3}}}\Rightarrow\frac{3.3v}{10*10{^{-3}}}=300K\Omega&space;) 
+
+##
 
 <p align="center">
   <img src="https://github.com/RafaelVVolkmer/44xx-PPM/blob/master/imagens_do_readme/PPM_sinal.jpg" alt="PPM_SIGNAL">
