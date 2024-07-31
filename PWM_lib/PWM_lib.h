@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#include "softstarter_rampa.h"
+
 #define N_BORDAS 2
 
 #define PULSO_INICIAL_CCR (uint32_t)(17400U)
